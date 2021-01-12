@@ -27,6 +27,7 @@ public class RegistrationApplication {
 					.addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
 					.authorizeRequests()
 					.antMatchers(HttpMethod.POST, "/login","/register").permitAll()
+					.antMatchers(HttpMethod.GET,"/h2-console").permitAll()
 					.anyRequest().authenticated();
 		}
 	}
